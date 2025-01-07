@@ -1,14 +1,24 @@
+target
+
+.gradle
+build
+
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.versionsBackup
+
+.DS_STORE
+
+
+
 # Compiled class file
 *.class
 
 # Log file
 *.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
 # Package Files #
 *.jar
