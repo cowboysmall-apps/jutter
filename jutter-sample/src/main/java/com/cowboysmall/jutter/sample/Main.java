@@ -9,68 +9,73 @@ import java.awt.Font;
 
 public class Main {
 
-    public static String getLookAndFeelClassName(String nameSnippet) {
-
-        String className = null;
-
-        UIManager.LookAndFeelInfo[] plafs = UIManager.getInstalledLookAndFeels();
-
-        for (UIManager.LookAndFeelInfo info : plafs) {
-
-            String name = info.getName();
-            System.out.println(name);
-
-            if (name.contains(nameSnippet)) {
-
-                className = info.getClassName();
-            }
-        }
-        return className;
-    }
-
     public static void main(String[] args) {
 
+        javax.swing.SwingUtilities.invokeLater(Main::createAndShowGUI);
+    }
 
+
+    //_________________________________________________________________________
+
+    private static void createAndShowGUI() {
 
         JFrame frame = new JFrame("Title");
-        frame.setFont(new Font("Arial", Font.PLAIN, 12));
-        frame.setJMenuBar(getJMenuBar());
+        frame.setFont(new Font("Arial", Font.PLAIN, 15));
+
 
         try {
 
-//            String className = getLookAndFeelClassName("GTK");
-//            UIManager.setLookAndFeel(className);
-            UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
+            // String className = getLookAndFeelClassName("GTK");
+            // UIManager.setLookAndFeel(className);
+            String className = "com.bulenkov.darcula.DarculaLaf";
+            UIManager.setLookAndFeel(className);
 
-        } catch(Exception ignored){}
+        } catch (Exception ignored) {
+        }
 
+
+//        frame.setJMenuBar(getJMenuBar());
         frame.setSize(1600, 900);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    private static JMenuBar getJMenuBar() {
 
-        JMenuBar menuBar = new JMenuBar();
+    private static JMenuBar getJMenuBar() {
 
         JMenu fileMenu = new JMenu("File");
 
-        JMenuItem newItem = new JMenuItem("New");
-        JMenuItem openItem = new JMenuItem("Open");
-        JMenuItem recentItem = new JMenuItem("Recent Projects");
-        JMenuItem closeItem = new JMenuItem("Close Project");
-        JMenuItem exitItem = new JMenuItem("Exit");
 
+        JMenuItem newItem = new JMenuItem("New");
         fileMenu.add(newItem);
+
+        JMenuItem openItem = new JMenuItem("Open");
         fileMenu.add(openItem);
+
+        JMenuItem recentItem = new JMenuItem("Recent Projects");
         fileMenu.add(recentItem);
+
+        JMenuItem closeItem = new JMenuItem("Close Project");
         fileMenu.add(closeItem);
 
         fileMenu.addSeparator();
+
+        JMenuItem exitItem = new JMenuItem("Exit");
         fileMenu.add(exitItem);
 
+
+        JMenuBar menuBar = new JMenuBar();
         menuBar.add(fileMenu);
+
         return menuBar;
+    }
+
+    private static String getLookAndFeelClassName(String nameSnippet) {
+
+        for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
+            if (info.getName().contains(nameSnippet))
+                return info.getClassName();
+        return null;
     }
 }
