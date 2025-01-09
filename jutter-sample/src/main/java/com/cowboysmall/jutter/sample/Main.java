@@ -33,12 +33,12 @@ public class Main {
 
 
         JFrame frame = new JFrame("Title");
-        frame.setFont(new Font("Arial", Font.PLAIN, 12));
+        frame.setFont(new Font("Arial", Font.PLAIN, 16));
         frame.setJMenuBar(getJMenuBar());
 
         try {
 
-//            String className = getLookAndFeelClassName("GTK");
+            String className = getLookAndFeelClassName("GTK");
 //            UIManager.setLookAndFeel(className);
             UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
 
