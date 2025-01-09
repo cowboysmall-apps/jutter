@@ -54,8 +54,9 @@ public class FlowLayoutDemo {
 
         // Show the Frame
         JFrame frame = new JFrame("Layout Demo");
-        frame.setSize(new Dimension(800, 450));
-        frame.getContentPane().add(pane, BorderLayout.CENTER);
+        frame.setSize(new Dimension(960, 540));
+//        frame.getContentPane().add(pane, BorderLayout.CENTER);
+        frame.setContentPane(pane);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
