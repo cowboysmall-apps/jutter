@@ -1,4 +1,4 @@
-package com.cowboysmall.jutter.sample;
+package com.cowboysmall.jutter.sample.swing;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -7,11 +7,11 @@ import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 import java.awt.Font;
 
-public class Main {
+public class Demo1 {
 
     public static void main(String[] args) {
 
-        javax.swing.SwingUtilities.invokeLater(Main::createAndShowGUI);
+        javax.swing.SwingUtilities.invokeLater(Demo1::createAndShowGUI);
     }
 
 

@@ -1,4 +1,4 @@
-package com.cowboysmall.jutter.sample;
+package com.cowboysmall.jutter.sample.swing;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -7,11 +7,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
-public class FlowLayoutDemo {
+public class Demo2 {
 
     public static void main(String[] args) {
 
-        javax.swing.SwingUtilities.invokeLater(FlowLayoutDemo::createAndShowGUI);
+        javax.swing.SwingUtilities.invokeLater(Demo2::createAndShowGUI);
     }
 
 
